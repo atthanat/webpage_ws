@@ -1,0 +1,101 @@
+<html>
+
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	 crossorigin="anonymous">
+	<script type="text/javascript" src="https://static.robotwebtools.org/roslibjs/current/roslib.min.js">	</script>
+	<script src="https://cdn.jsdelivr.net/npm/vue">	</script>
+	<script src="https://cdn.jsdelivr.net/npm/eventemitter2@5.0.1/lib/eventemitter2.min.js">	</script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script type="text/javascript" src="mjpegcanvas.js">	</script>
+    <style>
+        .table1 {
+            width: 100%;
+            border: 3px solid black;
+            height: 480px;
+            text-align: center;
+          }
+        .btn {
+            padding: 12px 16px;
+            font-size: 16px;
+            cursor: pointer;
+            display: inline-block;
+        }
+          </style>
+</head>
+
+<body>
+	<div id="app" class="container">
+		<div class="row">
+			<div class="col-md-12 col-sm-6 text-center my-2">
+				<h3>Choose a target</h3>
+            </div>
+            <div class="col-md-12 col-sm-6" style="overflow:auto;">
+                <div class="row">
+                    <div class="col-md-12 text-center ">
+                        <br>
+                        <table class="table1">
+                            <tr>
+                                <th>
+                                    <div class="row justify-content-center">
+                                        <div class="col-xs-2 col-sm-3 col-md-3 nopad text-center">
+                                            <label class="image-checkbox image-checkbox-unchecked">
+                                                <img id="img1" class="img-responsive" src="static/assets/no-img.png" />
+                                                <input type="checkbox" name="image[]" value="" />
+                                                <i class="fa fa-check hidden"></i>
+                                            </label>
+                                        </div>
+                                        <div class="col-xs-2 col-sm-3 col-md-3 nopad text-center">
+                                            <label class="image-checkbox image-checkbox-unchecked">
+                                                <img id="img2" class="img-responsive" src="static/assets/no-img.png" />
+                                                <input type="checkbox" name="image[]" value="" />
+                                                <i class="fa fa-check hidden"></i>
+                                            </label>
+                                        </div>
+                                        <div class="col-xs-2 col-sm-3 col-md-3 nopad text-center">
+                                            <label class="image-checkbox image-checkbox-unchecked">
+                                                <img id="img3" class="img-responsive" src="static/assets/no-img.png" />
+                                                <input type="checkbox" name="image[]" value="" />
+                                                <i class="fa fa-check hidden"></i>
+                                            </label>
+                                        </div>
+                                        <div class="col-xs-2 col-sm-3 col-md-3 nopad text-center">
+                                            <label class="image-checkbox image-checkbox-unchecked">
+                                                <img id="img4" class="img-responsive" src="static/assets/no-img.png" />
+                                                <input type="checkbox" name="image[]" value="" />
+                                                <i class="fa fa-check hidden"></i>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </th>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <!-- 1st row -->
+                    <div class="col-md-12 text-left my-2">
+                        <table width=100%>
+                            <tr>
+                                <th width=50% >
+                                    <button @click="submitService" :disabled="loading || !connected" class="btn btn-primary" style="font-size : 20px; width: 45%; height: 50px;">
+                                        <b>Submit</b></button>
+                                    <button @click="changeTargetService" :disabled="loading || !connected" class="btn btn-primary" style="font-size : 20px; width: 45%; height: 50px;">
+                                        <b>Change target</b></button>
+                                </th>
+                                <th style="float: right;">
+                                    <a href="index.html"><button @click="clearMemoryService"  class="btn btn-primary"><i class="fa fa-close"></i>Clear memory</button></a>
+                                </th>
+                            </tr>
+                        </table>
+                        
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <script type="text/javascript" src="main.js">
+        </script>
+</body>
+
+</html>
